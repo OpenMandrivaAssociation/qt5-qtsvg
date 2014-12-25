@@ -67,9 +67,6 @@ Devel files needed to build apps based on QtSvg.
 %{_qt5_libdir}/cmake/Qt%{api}Svg
 %{_qt5_libdir}/pkgconfig/Qt%{api}Svg.pc
 %{_qt5_prefix}/mkspecs/modules/qt_lib_svg.pri
-%if "%{_qt_libdir}" != "%{_libdir}"
-%{_libdir}/pkgconfig/Qt%{api}Svg.pc
-%endif
 
 #------------------------------------------------------------------------------
 
