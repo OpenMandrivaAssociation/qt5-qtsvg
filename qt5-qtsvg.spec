@@ -1,27 +1,29 @@
-%define api 5
+%define api %(echo %{version} |cut -d. -f1)
 %define major %api
-
-%define qtminor 4
-%define qtsubminor 1
+%define beta alpha
 
 %define major_private 1
-%define qtversion %{api}.%{qtminor}.%{qtsubminor}
 
 %define qtsvg %mklibname qt%{api}svg %{major}
 %define qtsvgd %mklibname qt%{api}svg -d
 %define qtsvg_p_d %mklibname qt%{api}svg-private -d
 
-%define qttarballdir qtsvg-opensource-src-%{qtversion}
+%define qttarballdir qtsvg-opensource-src-%{version}%{?beta:-%{beta}}
 %define _qt5_prefix %{_libdir}/qt%{api}
 
 Name:		qt5-qtsvg
-Version:	%{qtversion}
-Release:	1	
+Version:	5.5.0
+%if "%{beta}" == ""
+Release:	1
+Source0:	http://download.qt.io/official_releases/qt/%(echo %{version} |cut -d. -f1-2)/%{version}/submodules/%{qttarballdir}.tar.xz
+%else
+Release:	0.%{beta}.1
+Source0:	http://download.qt.io/development_releases/qt/%(echo %{version} |cut -d. -f1-2)/%{version}-%{beta}/submodules/%{qttarballdir}.tar.xz
+%endif	
 Summary:	Qt GUI toolkit
 Group:		Development/KDE and Qt
 License:	LGPLv2 with exceptions or GPLv3 with exceptions and GFDL
 URL:		http://www.qt-project.org
-Source0:	http://download.qt-project.org/official_releases/qt/%{api}.%{qtminor}/%{version}/submodules/%{qttarballdir}.tar.xz
 Source1:	qt5-qtsvg.rpmlintrc
 BuildRequires:	qt5-qtbase-devel = %version
 BuildRequires:	pkgconfig(Qt5Gui) = %version
@@ -61,7 +63,7 @@ Devel files needed to build apps based on QtSvg.
 
 %files -n %{qtsvgd}
 %{_qt5_includedir}/QtSvg
-%exclude %{_qt5_includedir}/QtSvg/%qtversion/QtSvg/private/
+%exclude %{_qt5_includedir}/QtSvg/%version/QtSvg/private/
 %{_qt5_libdir}/libQt%{api}Svg.so
 %{_qt5_libdir}/libQt%{api}Svg.prl
 %{_qt5_libdir}/cmake/Qt%{api}Svg
@@ -80,7 +82,7 @@ Provides:	qt5-qtsvg-private-devel = %version
 Devel files needed to build apps based on QtSvg.
 
 %files -n %{qtsvg_p_d}
-%{_qt5_includedir}/QtSvg/%qtversion/QtSvg/private
+%{_qt5_includedir}/QtSvg/%version/QtSvg/private
 %{_qt5_prefix}/mkspecs/modules/qt_lib_svg_private.pri
 
 #------------------------------------------------------------------------------
