@@ -1,6 +1,6 @@
 %define api %(echo %{version} |cut -d. -f1)
 %define major %api
-%define beta
+%define beta %nil
 
 %define major_private 1
 
@@ -8,22 +8,23 @@
 %define qtsvgd %mklibname qt%{api}svg -d
 %define qtsvg_p_d %mklibname qt%{api}svg-private -d
 
-%define qttarballdir qtsvg-opensource-src-%{version}%{?beta:-%{beta}}
 %define _qt5_prefix %{_libdir}/qt%{api}
 
 Name:		qt5-qtsvg
 Version:	5.5.0
-%if "%{beta}" == ""
-Release:	1
-Source0:	http://download.qt.io/official_releases/qt/%(echo %{version} |cut -d. -f1-2)/%{version}/submodules/%{qttarballdir}.tar.xz
-%else
+%if "%{beta}" != ""
 Release:	1.%{beta}.1
-Source0:	http://download.qt.io/development_releases/qt/%(echo %{version} |cut -d. -f1-2)/%{version}-%{beta}/submodules/%{qttarballdir}.tar.xz
+%define qttarballdir qtsvg-opensource-src-%{version}-%{beta}
+Source0:	http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%{beta}/submodules/%{qttarballdir}.tar.xz
+%else
+Release:	1
+%define qttarballdir qtsvg-opensource-src-%{version}
+Source0:	http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}/submodules/%{qttarballdir}.tar.xz
 %endif
 Summary:	Qt GUI toolkit
 Group:		Development/KDE and Qt
 License:	LGPLv2 with exceptions or GPLv3 with exceptions and GFDL
-URL:		http://www.qt-project.org
+URL:		http://www.qt.io
 Source1:	qt5-qtsvg.rpmlintrc
 BuildRequires:	qt5-qtbase-devel = %version
 BuildRequires:	pkgconfig(Qt5Gui) = %version
