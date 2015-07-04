@@ -1,6 +1,6 @@
 %define api %(echo %{version} |cut -d. -f1)
 %define major %api
-%define beta %nil
+%define beta
 
 %define major_private 1
 
@@ -19,7 +19,7 @@ Source0:	http://download.qt.io/official_releases/qt/%(echo %{version} |cut -d. -
 %else
 Release:	1.%{beta}.1
 Source0:	http://download.qt.io/development_releases/qt/%(echo %{version} |cut -d. -f1-2)/%{version}-%{beta}/submodules/%{qttarballdir}.tar.xz
-%endif	
+%endif
 Summary:	Qt GUI toolkit
 Group:		Development/KDE and Qt
 License:	LGPLv2 with exceptions or GPLv3 with exceptions and GFDL
