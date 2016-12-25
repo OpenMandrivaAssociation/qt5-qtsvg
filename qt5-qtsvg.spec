@@ -1,6 +1,6 @@
 %define api %(echo %{version} |cut -d. -f1)
 %define major %api
-%define beta beta
+%define beta rc
 
 # Workaround for a Makefile bug that copies an SVG file
 # from an example to %{buildroot}$HOME/...
