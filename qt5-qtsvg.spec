@@ -33,6 +33,8 @@ Source1:	qt5-qtsvg.rpmlintrc
 BuildRequires:	qt5-qtbase-devel = %version
 BuildRequires:	pkgconfig(Qt5Gui) = %version
 BuildRequires:	pkgconfig(Qt5Widgets) = %version
+# For the Provides: generator
+BuildRequires:	cmake >= 3.11.0-1
 
 %description
 The QtSvg module provides classes for displaying and creating SVG files.
