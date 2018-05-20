@@ -33,6 +33,7 @@ Source1:	qt5-qtsvg.rpmlintrc
 BuildRequires:	qt5-qtbase-devel = %version
 BuildRequires:	pkgconfig(Qt5Gui) = %version
 BuildRequires:	pkgconfig(Qt5Widgets) = %version
+BuildRequires:	pkgconfig(zlib)
 # For the Provides: generator
 BuildRequires:	cmake >= 3.11.0-1
 
