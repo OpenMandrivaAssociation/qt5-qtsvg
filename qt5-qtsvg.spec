@@ -15,7 +15,7 @@
 %define _qt5_prefix %{_libdir}/qt%{api}
 
 Name:		qt5-qtsvg
-Version:	5.9.2
+Version:	5.9.6
 %if "%{beta}" != ""
 Release:	0.%{beta}.1
 %define qttarballdir qtsvg-opensource-src-%{version}-%{beta}

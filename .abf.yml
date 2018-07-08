@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   qtsvg-opensource-src-5.9.2.tar.xz: 635c71700340b361da63efe030747e44a55432cc
+sources:
+  qtsvg-opensource-src-5.9.6.tar.xz: 463bc7fa65cd32751479fcf61d65422f21432c90
