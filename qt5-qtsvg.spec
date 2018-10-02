@@ -101,21 +101,21 @@ Group:    Development/KDE and Qt
 Requires: %{qtsvgd} = %version
 
 %description -n %{name}-examples
-Examples for QtSvg
+Examples for QtSvg.
 
 %files -n %{name}-examples
 %{_qt5_prefix}/examples/svg
 
 %prep
-%setup -q -n %qttarballdir
+%autosetup -n %qttarballdir -p1
 
 %build
 %qmake_qt5
 
-%make
+%make_build
 #------------------------------------------------------------------------------
 %install
-%makeinstall_std INSTALL_ROOT=%{buildroot}
+%make_install INSTALL_ROOT=%{buildroot}
 
 # Fix all buildroot paths
 find %{buildroot}/%{_qt5_libdir} -type f -name '*prl' -exec perl -pi -e "s, -L%{_builddir}/\S+,,g" {} \;
