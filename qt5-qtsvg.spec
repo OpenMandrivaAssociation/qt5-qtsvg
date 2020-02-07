@@ -2,10 +2,6 @@
 %define major %api
 %define beta %{nil}
 
-# Workaround for a Makefile bug that copies an SVG file
-# from an example to %{buildroot}$HOME/...
-%define _unpackaged_files_terminate_build 0
-
 %define major_private 1
 
 %define qtsvg %mklibname qt%{api}svg %{major}
@@ -21,7 +17,7 @@ Release:	0.%{beta}.1
 %define qttarballdir qtsvg-everywhere-src-%{version}-%{beta}
 Source0:	http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%{beta}/submodules/%{qttarballdir}.tar.xz
 %else
-Release:	1
+Release:	2
 %define qttarballdir qtsvg-everywhere-src-%{version}
 Source0:	http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}/submodules/%{qttarballdir}.tar.xz
 %endif
@@ -77,6 +73,8 @@ Devel files needed to build apps based on QtSvg.
 %{_qt5_libdir}/cmake/Qt%{api}Svg
 %{_qt5_libdir}/pkgconfig/Qt%{api}Svg.pc
 %{_qt5_prefix}/mkspecs/modules/qt_lib_svg.pri
+%{_libdir}/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake
+%{_libdir}/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake
 
 #------------------------------------------------------------------------------
 
