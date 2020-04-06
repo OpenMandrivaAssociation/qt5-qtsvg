@@ -1,6 +1,6 @@
 %define api %(echo %{version} |cut -d. -f1)
 %define major %api
-%define beta beta2
+%define beta beta3
 
 %define major_private 1
 
