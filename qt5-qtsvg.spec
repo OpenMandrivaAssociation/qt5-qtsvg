@@ -11,21 +11,25 @@
 %define _qt5_prefix %{_libdir}/qt%{api}
 
 Name:		qt5-qtsvg
-Version:	5.15.2
+Version:	5.15.3
 %if "%{beta}" != ""
 Release:	0.%{beta}.1
 %define qttarballdir qtsvg-everywhere-src-%{version}-%{beta}
 Source0:	http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%{beta}/submodules/%{qttarballdir}.tar.xz
 %else
 Release:	1
-%define qttarballdir qtsvg-everywhere-src-%{version}
-Source0:	http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}/submodules/%{qttarballdir}.tar.xz
+%define qttarballdir qtsvg-everywhere-src-5.15.2
+Source0:	http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/5.15.2/submodules/%{qttarballdir}.tar.xz
 %endif
 Summary:	Qt GUI toolkit
 Group:		Development/KDE and Qt
 License:	LGPLv2 with exceptions or GPLv3 with exceptions and GFDL
 URL:		http://www.qt.io
 Source1:	qt5-qtsvg.rpmlintrc
+Patch1000:	0001-Add-changes-file-for-Qt-5.12.10.patch
+Patch1002:	0003-Bump-version.patch
+Patch1003:	0004-Improve-handling-of-malformed-numeric-values-in-svg-.patch
+Patch1004:	0005-Clamp-parsed-doubles-to-float-representable-values.patch
 BuildRequires:	qt5-qtbase-devel = %version
 BuildRequires:	pkgconfig(Qt5Gui) = %version
 BuildRequires:	pkgconfig(Qt5Widgets) = %version
@@ -106,6 +110,7 @@ Examples for QtSvg.
 
 %prep
 %autosetup -n %qttarballdir -p1
+%{_qt5_prefix}/bin/syncqt.pl -version %{version}
 
 %build
 %qmake_qt5
