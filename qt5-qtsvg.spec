@@ -10,29 +10,31 @@
 
 %define _qt5_prefix %{_libdir}/qt%{api}
 
+Summary:	Qt GUI toolkit
 Name:		qt5-qtsvg
+Group:		Development/KDE and Qt
+License:	LGPLv2 with exceptions or GPLv3 with exceptions and GFDL
+URL:		http://www.qt.io
 Version:	5.15.3
 %if "%{beta}" != ""
 Release:	0.%{beta}.1
 %define qttarballdir qtsvg-everywhere-src-%{version}-%{beta}
 Source0:	http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%{beta}/submodules/%{qttarballdir}.tar.xz
 %else
-Release:	1
+Release:	2
 %define qttarballdir qtsvg-everywhere-src-5.15.2
 Source0:	http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/5.15.2/submodules/%{qttarballdir}.tar.xz
 %endif
-Summary:	Qt GUI toolkit
-Group:		Development/KDE and Qt
-License:	LGPLv2 with exceptions or GPLv3 with exceptions and GFDL
-URL:		http://www.qt.io
 Source1:	qt5-qtsvg.rpmlintrc
 Patch1000:	0001-Add-changes-file-for-Qt-5.12.10.patch
 Patch1002:	0003-Bump-version.patch
 Patch1003:	0004-Improve-handling-of-malformed-numeric-values-in-svg-.patch
 Patch1004:	0005-Clamp-parsed-doubles-to-float-representable-values.patch
-BuildRequires:	qt5-qtbase-devel = %version
-BuildRequires:	pkgconfig(Qt5Gui) = %version
-BuildRequires:	pkgconfig(Qt5Widgets) = %version
+Patch1005:	0006-Avoid-buffer-overflow-in-isSupportedSvgFeature.patch
+Patch1006:	0007-Make-image-handler-accept-UTF-16-UTF-32-encoded-SVGs.patch
+BuildRequires:	qt5-qtbase-devel = %{version}
+BuildRequires:	pkgconfig(Qt5Gui) = %{version}
+BuildRequires:	pkgconfig(Qt5Widgets) = %{version}
 BuildRequires:	pkgconfig(zlib)
 # For the Provides: generator
 BuildRequires:	cmake >= 3.11.0-1
@@ -42,7 +44,7 @@ The QtSvg module provides classes for displaying and creating SVG files.
 
 #------------------------------------------------------------------------------
 
-%package -n	%{qtsvg}
+%package -n %{qtsvg}
 Summary:	Qt%{api} Component Library
 Group:		System/Libraries
 
@@ -61,17 +63,17 @@ The QtSvg module provides classes for displaying and creating SVG files.
 
 #------------------------------------------------------------------------------
 
-%package -n	%{qtsvgd}
+%package -n %{qtsvgd}
 Summary:	Devel files needed to build apps based on QtSvg
 Group:		Development/KDE and Qt
-Requires:	%{qtsvg} = %version
+Requires:	%{qtsvg} = %{version}
 
 %description -n %{qtsvgd}
 Devel files needed to build apps based on QtSvg.
 
 %files -n %{qtsvgd}
 %{_qt5_includedir}/QtSvg
-%exclude %{_qt5_includedir}/QtSvg/%version/QtSvg/private/
+%exclude %{_qt5_includedir}/QtSvg/%{version}/QtSvg/private/
 %{_qt5_libdir}/libQt%{api}Svg.so
 %{_qt5_libdir}/libQt%{api}Svg.prl
 %{_qt5_libdir}/cmake/Qt%{api}Svg
@@ -82,25 +84,25 @@ Devel files needed to build apps based on QtSvg.
 
 #------------------------------------------------------------------------------
 
-%package -n	%{qtsvg_p_d}
+%package -n %{qtsvg_p_d}
 Summary:	Devel files needed to build apps based on QtSvg
 Group:		Development/KDE and Qt
-Requires:	%{qtsvgd} = %version
-Provides:	qt5-qtsvg-private-devel = %version
+Requires:	%{qtsvgd} = %{version}
+Provides:	qt5-qtsvg-private-devel = %{version}
 
 %description -n %{qtsvg_p_d}
 Devel files needed to build apps based on QtSvg.
 
 %files -n %{qtsvg_p_d}
-%{_qt5_includedir}/QtSvg/%version/QtSvg/private
+%{_qt5_includedir}/QtSvg/%{version}/QtSvg/private
 %{_qt5_prefix}/mkspecs/modules/qt_lib_svg_private.pri
 
 #------------------------------------------------------------------------------
 
 %package -n %{name}-examples
-Summary: Examples for QtSvg
-Group:    Development/KDE and Qt
-Requires: %{qtsvgd} = %version
+Summary:	Examples for QtSvg
+Group:		Development/KDE and Qt
+Requires:	%{qtsvgd} = %{version}
 
 %description -n %{name}-examples
 Examples for QtSvg.
@@ -109,13 +111,13 @@ Examples for QtSvg.
 %{_qt5_prefix}/examples/svg
 
 %prep
-%autosetup -n %qttarballdir -p1
+%autosetup -n %{qttarballdir} -p1
 %{_qt5_prefix}/bin/syncqt.pl -version %{version}
 
 %build
 %qmake_qt5
-
 %make_build
+
 #------------------------------------------------------------------------------
 %install
 %make_install INSTALL_ROOT=%{buildroot}
