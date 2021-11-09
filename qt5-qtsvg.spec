@@ -21,17 +21,24 @@ Release:	0.%{beta}.1
 %define qttarballdir qtsvg-everywhere-src-%{version}-%{beta}
 Source0:	http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%{beta}/submodules/%{qttarballdir}.tar.xz
 %else
-Release:	2
+Release:	3
 %define qttarballdir qtsvg-everywhere-src-5.15.2
 Source0:	http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/5.15.2/submodules/%{qttarballdir}.tar.xz
 %endif
 Source1:	qt5-qtsvg.rpmlintrc
+# (tpg) from KDE https://invent.kde.org/qt/qt/qtsvg -b kde/5.15
 Patch1000:	0001-Add-changes-file-for-Qt-5.12.10.patch
 Patch1002:	0003-Bump-version.patch
 Patch1003:	0004-Improve-handling-of-malformed-numeric-values-in-svg-.patch
 Patch1004:	0005-Clamp-parsed-doubles-to-float-representable-values.patch
 Patch1005:	0006-Avoid-buffer-overflow-in-isSupportedSvgFeature.patch
 Patch1006:	0007-Make-image-handler-accept-UTF-16-UTF-32-encoded-SVGs.patch
+Patch1007:	0008-Limit-font-size-to-avoid-numerous-overflows.patch
+Patch1008:	0009-Support-font-size-not-in-pixels.patch
+Patch1009:	0010-Fix-text-x-y-when-the-length-is-not-in-pixels.patch
+Patch1010:	0011-Fix-parsing-of-arc-elements-in-paths.patch
+Patch1011:	0012-Improve-parsing-of-r.patch
+Patch1012:	0013-Fix-parsing-of-animation-clock-values.patch
 BuildRequires:	qt5-qtbase-devel = %{version}
 BuildRequires:	pkgconfig(Qt5Gui) = %{version}
 BuildRequires:	pkgconfig(Qt5Widgets) = %{version}
