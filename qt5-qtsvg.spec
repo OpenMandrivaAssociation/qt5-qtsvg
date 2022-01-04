@@ -21,7 +21,7 @@ Release:	0.%{beta}.1
 %define qttarballdir qtsvg-everywhere-src-%{version}-%{beta}
 Source0:	http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%{beta}/submodules/%{qttarballdir}.tar.xz
 %else
-Release:	3
+Release:	4
 %define qttarballdir qtsvg-everywhere-src-5.15.2
 Source0:	http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/5.15.2/submodules/%{qttarballdir}.tar.xz
 %endif
@@ -39,6 +39,9 @@ Patch1009:	0010-Fix-text-x-y-when-the-length-is-not-in-pixels.patch
 Patch1010:	0011-Fix-parsing-of-arc-elements-in-paths.patch
 Patch1011:	0012-Improve-parsing-of-r.patch
 Patch1012:	0013-Fix-parsing-of-animation-clock-values.patch
+Patch1013:	0014-Do-stricter-error-checking-when-parsing-path-nodes.patch
+Patch1014:	0015-SVG-Image-reading-Reject-oversize-svgs-as-corrupt.patch
+
 BuildRequires:	qt5-qtbase-devel = %{version}
 BuildRequires:	pkgconfig(Qt5Gui) = %{version}
 BuildRequires:	pkgconfig(Qt5Widgets) = %{version}
@@ -139,7 +142,7 @@ perl -pi -e '\
 s@-L/usr/X11R6/%{_lib} @@g;\
 s@-I/usr/X11R6/include @@g;\
 s@-L/%{_builddir}\S+@@g'\
-    `find . -name \*.pc`
+    $(find . -name \*.pc)
 
 # .la and .a files, die, die, die.
 rm -f %{buildroot}%{_qt5_libdir}/lib*.la
