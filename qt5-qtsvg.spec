@@ -21,7 +21,7 @@ Release:	0.%{beta}.1
 %define qttarballdir qtsvg-everywhere-src-%{version}-%{beta}
 Source0:	http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%{beta}/submodules/%{qttarballdir}.tar.xz
 %else
-Release:	4
+Release:	5
 %define qttarballdir qtsvg-everywhere-src-5.15.2
 Source0:	http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/5.15.2/submodules/%{qttarballdir}.tar.xz
 %endif
@@ -41,6 +41,7 @@ Patch1011:	0012-Improve-parsing-of-r.patch
 Patch1012:	0013-Fix-parsing-of-animation-clock-values.patch
 Patch1013:	0014-Do-stricter-error-checking-when-parsing-path-nodes.patch
 Patch1014:	0015-SVG-Image-reading-Reject-oversize-svgs-as-corrupt.patch
+Patch1015:	0016-Unconditionally-stop-parsing-after-the-svg-end-tag.patch
 
 BuildRequires:	qt5-qtbase-devel = %{version}
 BuildRequires:	pkgconfig(Qt5Gui) = %{version}
