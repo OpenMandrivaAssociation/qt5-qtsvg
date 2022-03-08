@@ -1,7 +1,7 @@
-From 7a98a466bd0a444175ce9a254beed6a185358f6f Mon Sep 17 00:00:00 2001
+From b6e0d7e9f4b2e1b3fd7847c2ddfe2e895a56553c Mon Sep 17 00:00:00 2001
 From: Eirik Aavitsland <eirik.aavitsland@qt.io>
 Date: Wed, 7 Jul 2021 10:09:58 +0200
-Subject: [PATCH 11/13] Fix parsing of arc elements in paths
+Subject: [PATCH 07/12] Fix parsing of arc elements in paths
 
 The arc element takes some flag parameters, which could be mixed up
 with the float parameters since svg does not require delimiting
@@ -95,5 +95,5 @@ index 8f1f03b..36c76ec 100644
  {
      static const char *svgs[] = {
 -- 
-2.33.1
+2.35.1
 

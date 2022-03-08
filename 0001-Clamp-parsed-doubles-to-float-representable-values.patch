@@ -1,7 +1,7 @@
-From 95990cbeebc0ab9959e2a925a93ad4897416bbb7 Mon Sep 17 00:00:00 2001
+From 4433b84ac19acda555180195421aea4c28657614 Mon Sep 17 00:00:00 2001
 From: Allan Sandfeld Jensen <allan.jensen@qt.io>
 Date: Thu, 4 Mar 2021 14:28:48 +0100
-Subject: [PATCH 5/5] Clamp parsed doubles to float representable values
+Subject: [PATCH 01/12] Clamp parsed doubles to float representable values
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
@@ -44,5 +44,5 @@ index b3d9aaf..9dac05c 100644
      qreal nfx = ncx;
      if (!fx.isEmpty())
 -- 
-2.31.1
+2.35.1
 

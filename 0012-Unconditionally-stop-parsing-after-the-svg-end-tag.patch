@@ -1,7 +1,7 @@
-From 728012f7762ecd5762d493f8796907c6456f31e7 Mon Sep 17 00:00:00 2001
+From 2f42157cabbd1db6249ccb1d14e6eede80451e0c Mon Sep 17 00:00:00 2001
 From: Eirik Aavitsland <eirik.aavitsland@qt.io>
 Date: Wed, 5 Jan 2022 09:48:22 +0100
-Subject: [PATCH] Unconditionally stop parsing after the svg end tag
+Subject: [PATCH 12/12] Unconditionally stop parsing after the svg end tag
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit

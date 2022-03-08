@@ -1,7 +1,7 @@
-From 1c2072ad16e0097c15df701dc22f07bf481fc4ec Mon Sep 17 00:00:00 2001
+From 0feca8a47207eea860650d69735454ff1cbfb02e Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Robert=20L=C3=B6hning?= <robert.loehning@qt.io>
 Date: Wed, 17 Feb 2021 19:20:42 +0100
-Subject: [PATCH 6/7] Avoid buffer overflow in isSupportedSvgFeature
+Subject: [PATCH 02/12] Avoid buffer overflow in isSupportedSvgFeature
 
 Fixes oss-fuzz issue 29873.
 
@@ -34,5 +34,5 @@ index b89608b..89c9e4e 100644
              return str == QLatin1String(wordlist[key]);
      }
 -- 
-2.33.0
+2.35.1
 

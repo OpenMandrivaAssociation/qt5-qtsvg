@@ -1,7 +1,7 @@
-From cfc616978b52a396b2ef6900546f7fc086d7cab3 Mon Sep 17 00:00:00 2001
+From 7aa354e69379061d234e91456fa7925853149ed8 Mon Sep 17 00:00:00 2001
 From: Eirik Aavitsland <eirik.aavitsland@qt.io>
 Date: Thu, 8 Apr 2021 13:19:52 +0200
-Subject: [PATCH 7/7] Make image handler accept UTF-16/UTF-32 encoded SVGs
+Subject: [PATCH 03/12] Make image handler accept UTF-16/UTF-32 encoded SVGs
 
 The canRead() header checks assumed 8 bit encoding.
 
@@ -87,6 +87,69 @@ index bd39b2a..4136aaf 100644
  }
  
  QT_END_NAMESPACE
+diff --git a/tests/auto/qsvgplugin/simple_Utf16BE.svg b/tests/auto/qsvgplugin/simple_Utf16BE.svg
+new file mode 100644
+index 0000000000000000000000000000000000000000..c3312cb2a98dc3a2a7f42100720a94ee913ab641
+GIT binary patch
+literal 228
+zSPA?0pTUNqn4ydzok4-2j3Jewh@qGvlOdlWkHMBfiNTOTkHLUJi9vy(f+3e7har!l
+z7%ZN_P{L5cP{3ftpwFPsP!5KA4CM^Q40;Ut3`Gp-4EhX43<hAR4>ezj!H$88L4iSm
+z!G<B3A(NqqA(<hEA(cUaA(^29Y^o{Lu4INv6n+tyXT)F%c1apTCPNNG4p>YXY(pAD
+S8kh#TQy*-L4Fk+ppq&5(93m0`
+
+literal 0
+HSP26F00001
+
+diff --git a/tests/auto/qsvgplugin/simple_Utf16LE.svg b/tests/auto/qsvgplugin/simple_Utf16LE.svg
+new file mode 100644
+index 0000000000000000000000000000000000000000..cdbeda92a5145faf70fcc8dcdf034141a66f59cf
+GIT binary patch
+literal 228
+zSPA?8&xWCxp^PD&L4l!+A(f$sp_n0)A)g_S!InXZ!H_|Z!GJ-DL4l!yA(tVCA&;RL
+zES|wo!cf9cz+lCo&!Epx4u*OR<qXCQdJOptMGWZ-`V2-424JWUHD8Irj)99ofkA=6
+zh9Q|Dlc9(qnIVTEl|g|anV|w~swvd2WQIx<ei4{w#9#_`Ng6{YLk>d@SWFpgLmERG
+Rm<G91A8d;a1I$*Cod6{<A`$=q
+
+literal 0
+HSP26F00001
+
+diff --git a/tests/auto/qsvgplugin/simple_Utf32BE.svg b/tests/auto/qsvgplugin/simple_Utf32BE.svg
+new file mode 100644
+index 0000000000000000000000000000000000000000..0d5d02c1ba98a60908ca852692bf5f1124d4b64b
+GIT binary patch
+literal 456
+zSP5fb`1hZIfx(7>fuWdzfuW3nfgzoNfk6SvPGw+VD1ypmGB7aYGcYjZF)%RLGB7YG
+zF)%O~GB7acF)%O~K=~kj6$}gvxeN>pIZ(AAb7AT;7#J8zptyj6fx(J_fk7XN%NZCL
+zU>Ia3h;0ltA7n4c9U!-X)EhzV1lbG1ATf|VF!zJpX2-z5zy<XS$Xy^mCNnTFfcyb6
+z3&aMw5#&dZJcti+JIt-7P&+_o!Q?BE{EjXUG83j3<UWu*Om7<0UXXnt3{$5JwFBe_
+akQxvMu|XK77vwjXUqF5U@sa%smIDCi8X^(^
+
+literal 0
+HSP26F00001
+
+diff --git a/tests/auto/qsvgplugin/simple_Utf32LE.svg b/tests/auto/qsvgplugin/simple_Utf32LE.svg
+new file mode 100644
+index 0000000000000000000000000000000000000000..58a71596656a79d9540b6bbef92e6b40aec46871
+GIT binary patch
+literal 456
+zSPA?8kAcC4fq|izfq|infq@~Nfq_8*%1&iqU?_shWil`@<TEfZ<S{TX*fKCMC^0ZF
+z7&0(0=rJ%b7(n?TeH9E047m&p3^`D>Aah~rGZ+{cN}#xafq}t_fq_9Eipv=o7+@G=
+zCWvheH6LUz$Q>ZJfz%s8?F88i!XPn_Juvr!+-AqXz`zCd3&>p{KPEFUFo664G7H28
+zxe???kUWSFay!hercgUTX2Ikuk^GJ>4>A*`7vw&WJWOvI)LxK%APiHd47CH~2ap;N
+X2C+dHrWfQlm|sAC0P&Ii3X=l>OJE`r
+
+literal 0
+HSP26F00001
+
+diff --git a/tests/auto/qsvgplugin/simple_Utf8.svg b/tests/auto/qsvgplugin/simple_Utf8.svg
+new file mode 100644
+index 0000000..2052c48
+--- /dev/null
++++ b/tests/auto/qsvgplugin/simple_Utf8.svg
+@@ -0,0 +1,3 @@
++﻿<svg version="1.0" xmlns="http://www.w3.org/2000/svg">
++  <circle cx="50" cy="50" r="25" fill="#00ff00" />
++</svg>
 diff --git a/tests/auto/qsvgplugin/tst_qsvgplugin.cpp b/tests/auto/qsvgplugin/tst_qsvgplugin.cpp
 index e1f84f3..73bbe8b 100644
 --- a/tests/auto/qsvgplugin/tst_qsvgplugin.cpp
@@ -138,5 +201,5 @@ index e1f84f3..73bbe8b 100644
  QTEST_MAIN(tst_QSvgPlugin)
  #include "tst_qsvgplugin.moc"
 -- 
-2.33.0
+2.35.1
 
