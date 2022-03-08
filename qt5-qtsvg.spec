@@ -10,8 +10,6 @@
 
 %define _qt5_prefix %{_libdir}/qt%{api}
 
-%define __scm git
-
 Summary:	Qt GUI toolkit
 Name:		qt5-qtsvg
 Group:		Development/KDE and Qt
@@ -41,6 +39,10 @@ Patch1008:	0009-Fix-parsing-of-animation-clock-values.patch
 Patch1009:	0010-Do-stricter-error-checking-when-parsing-path-nodes.patch
 Patch1010:	0011-SVG-Image-reading-Reject-oversize-svgs-as-corrupt.patch
 Patch1011:	0012-Unconditionally-stop-parsing-after-the-svg-end-tag.patch
+
+# KDE patches contain binary diffs and need to be applied with "git apply"
+%define __scm git
+BuildRequires:	git-core
 
 BuildRequires:	qt5-qtbase-devel = %{version}
 BuildRequires:	pkgconfig(Qt5Gui) = %{version}
