@@ -1,7 +1,7 @@
-From c838ea51cdbccc49d971d4c6ac3a3e3f9259ba0d Mon Sep 17 00:00:00 2001
+From b8a829e3883b8a4ac564ac25d20d099797644c24 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Robert=20L=C3=B6hning?= <robert.loehning@qt.io>
 Date: Fri, 23 Jul 2021 13:53:47 +0200
-Subject: [PATCH 04/12] Limit font size to avoid numerous overflows
+Subject: [PATCH 02/10] Limit font size to avoid numerous overflows
 
 The font size will be passed through a QFixed in
 QFontEngineBox::ascent() and overflow there as well as in further places.
@@ -32,5 +32,5 @@ index 9dac05c..e496a54 100644
              break;
          default:
 -- 
-2.35.1
+2.36.1
 

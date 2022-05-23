@@ -1,7 +1,7 @@
-From 550b35f9836c1a06cb5da738128654bb2426264b Mon Sep 17 00:00:00 2001
+From 4469006285be9994f7b8ab4587f089716f59ebb9 Mon Sep 17 00:00:00 2001
 From: Eirik Aavitsland <eirik.aavitsland@qt.io>
 Date: Fri, 2 Jul 2021 16:09:30 +0200
-Subject: [PATCH 09/12] Fix parsing of animation clock values
+Subject: [PATCH 07/10] Fix parsing of animation clock values
 
 Color animation duration parsing mixed seconds and milliseconds.
 
@@ -113,5 +113,5 @@ index 9575f14..b542089 100644
      QSvgAnimateTransform::TransformType type = QSvgAnimateTransform::Empty;
      if (typeStr == QLatin1String("translate")) {
 -- 
-2.35.1
+2.36.1
 

@@ -1,7 +1,7 @@
-From 6f716b8c9c3330fdc9ea6b080da145f187980f3a Mon Sep 17 00:00:00 2001
+From 53ada351e2e8ac14d2e428813e959689ca6fe583 Mon Sep 17 00:00:00 2001
 From: Eirik Aavitsland <eirik.aavitsland@qt.io>
 Date: Mon, 25 Oct 2021 14:17:55 +0200
-Subject: [PATCH 10/12] Do stricter error checking when parsing path nodes
+Subject: [PATCH 08/10] Do stricter error checking when parsing path nodes
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
@@ -220,5 +220,5 @@ index b542089..2ea80ed 100644
      QSvgNode *path = new QSvgPath(parent, qpath);
      return path;
 -- 
-2.35.1
+2.36.1
 
