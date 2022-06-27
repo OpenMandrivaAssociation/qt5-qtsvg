@@ -1,4 +1,4 @@
-From b8a829e3883b8a4ac564ac25d20d099797644c24 Mon Sep 17 00:00:00 2001
+From 15e24cbb6980040591ecbd072354b71b464373ff Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Robert=20L=C3=B6hning?= <robert.loehning@qt.io>
 Date: Fri, 23 Jul 2021 13:53:47 +0200
 Subject: [PATCH 02/10] Limit font size to avoid numerous overflows

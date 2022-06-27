@@ -1,4 +1,4 @@
-From 1f59a48d239045bda7cfd43ed48fbf8553d36756 Mon Sep 17 00:00:00 2001
+From d8d7f795f5c3700104e687402fe1c2ac7bb12668 Mon Sep 17 00:00:00 2001
 From: Eirik Aavitsland <eirik.aavitsland@qt.io>
 Date: Wed, 7 Jul 2021 10:09:58 +0200
 Subject: [PATCH 05/10] Fix parsing of arc elements in paths

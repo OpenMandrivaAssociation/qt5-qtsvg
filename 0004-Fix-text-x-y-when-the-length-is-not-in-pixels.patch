@@ -1,4 +1,4 @@
-From dd33c643251fbdcc9ed91f3617646a4367a434b7 Mon Sep 17 00:00:00 2001
+From 7cb5c895f277db01c449a6dbd3f5bb070bb7c489 Mon Sep 17 00:00:00 2001
 From: Albert Astals Cid <albert.astals.cid@kdab.com>
 Date: Mon, 11 Oct 2021 11:11:26 +0200
 Subject: [PATCH 04/10] Fix text x/y when the length is not in pixels

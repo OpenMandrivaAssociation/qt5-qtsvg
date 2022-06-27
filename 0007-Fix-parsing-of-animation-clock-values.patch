@@ -1,4 +1,4 @@
-From 4469006285be9994f7b8ab4587f089716f59ebb9 Mon Sep 17 00:00:00 2001
+From d0e5f2beb4e4bfbc33151797eb34aad2a2bff701 Mon Sep 17 00:00:00 2001
 From: Eirik Aavitsland <eirik.aavitsland@qt.io>
 Date: Fri, 2 Jul 2021 16:09:30 +0200
 Subject: [PATCH 07/10] Fix parsing of animation clock values

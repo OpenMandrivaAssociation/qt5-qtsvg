@@ -1,4 +1,4 @@
-From df7c94a391e69adef6e2b7f3d415496c6ba62ab1 Mon Sep 17 00:00:00 2001
+From 62d2a30f5fdd04537386469cd4d28aac93a0240c Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Robert=20L=C3=B6hning?= <robert.loehning@qt.io>
 Date: Wed, 17 Feb 2021 19:20:42 +0100
 Subject: [PATCH 01/10] Avoid buffer overflow in isSupportedSvgFeature

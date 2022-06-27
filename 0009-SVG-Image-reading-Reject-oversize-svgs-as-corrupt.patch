@@ -1,4 +1,4 @@
-From 41ab201cd44e4f0c7f6d22fca862d5650bf574ee Mon Sep 17 00:00:00 2001
+From c62dcf9681b1f6fa056dc45037f51a0f0932d7e7 Mon Sep 17 00:00:00 2001
 From: Eirik Aavitsland <eirik.aavitsland@qt.io>
 Date: Mon, 25 Oct 2021 14:43:09 +0200
 Subject: [PATCH 09/10] SVG Image reading: Reject oversize svgs as corrupt

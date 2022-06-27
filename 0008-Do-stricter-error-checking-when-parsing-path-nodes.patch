@@ -1,4 +1,4 @@
-From 53ada351e2e8ac14d2e428813e959689ca6fe583 Mon Sep 17 00:00:00 2001
+From 2a9b8afa11f920937a7ccaf07bc80569942c6c3d Mon Sep 17 00:00:00 2001
 From: Eirik Aavitsland <eirik.aavitsland@qt.io>
 Date: Mon, 25 Oct 2021 14:17:55 +0200
 Subject: [PATCH 08/10] Do stricter error checking when parsing path nodes

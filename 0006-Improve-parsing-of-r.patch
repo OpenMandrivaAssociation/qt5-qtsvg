@@ -1,4 +1,4 @@
-From 8145bccbefe00a5daffd60c4e9fc11f551018df1 Mon Sep 17 00:00:00 2001
+From 14add68a00ad3b9991387c0ed2c8cd759b39805b Mon Sep 17 00:00:00 2001
 From: Allan Sandfeld Jensen <allan.jensen@qt.io>
 Date: Fri, 5 Mar 2021 12:52:36 +0100
 Subject: [PATCH 06/10] Improve parsing of "r"

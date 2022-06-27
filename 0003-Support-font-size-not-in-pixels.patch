@@ -1,4 +1,4 @@
-From 5b684556c7cbe136ff9f665b18a1e8c8e53f3175 Mon Sep 17 00:00:00 2001
+From 281c60c95fca81eecddbca9f9b8816fe23ffd9f7 Mon Sep 17 00:00:00 2001
 From: Albert Astals Cid <albert.astals.cid@kdab.com>
 Date: Mon, 11 Oct 2021 11:13:57 +0200
 Subject: [PATCH 03/10] Support font size not in pixels
