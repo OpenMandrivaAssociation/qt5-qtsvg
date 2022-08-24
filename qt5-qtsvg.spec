@@ -21,7 +21,7 @@ Release:	0.%{beta}.1
 %define qttarballdir qtsvg-everywhere-src-%{version}-%{beta}
 Source0:	http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%{beta}/submodules/%{qttarballdir}.tar.xz
 %else
-Release:	1
+Release:	2
 %define qttarballdir qtsvg-everywhere-opensource-src-%{version}
 Source0:	http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}/submodules/%{qttarballdir}.tar.xz
 %endif
@@ -37,6 +37,7 @@ Patch1006:	0007-Fix-parsing-of-animation-clock-values.patch
 Patch1007:	0008-Do-stricter-error-checking-when-parsing-path-nodes.patch
 Patch1008:	0009-SVG-Image-reading-Reject-oversize-svgs-as-corrupt.patch
 Patch1009:	0010-Unconditionally-stop-parsing-after-the-svg-end-tag.patch
+Patch1010:	0011-Avoid-undefined-behavior-when-painter-transform-goes.patch
 # KDE patches contain binary diffs and need to be applied with "git apply"
 %define __scm git
 BuildRequires:	git-core
