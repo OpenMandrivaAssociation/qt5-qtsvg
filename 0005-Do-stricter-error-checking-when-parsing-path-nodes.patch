@@ -1,7 +1,7 @@
-From 2a9b8afa11f920937a7ccaf07bc80569942c6c3d Mon Sep 17 00:00:00 2001
+From e5773d7408f1603653b677e8eb2f92b57fe05154 Mon Sep 17 00:00:00 2001
 From: Eirik Aavitsland <eirik.aavitsland@qt.io>
 Date: Mon, 25 Oct 2021 14:17:55 +0200
-Subject: [PATCH 08/10] Do stricter error checking when parsing path nodes
+Subject: [PATCH 5/8] Do stricter error checking when parsing path nodes
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
@@ -22,7 +22,7 @@ Reviewed-by: Robert Löhning <robert.loehning@qt.io>
  1 file changed, 25 insertions(+), 34 deletions(-)
 
 diff --git a/src/svg/qsvghandler.cpp b/src/svg/qsvghandler.cpp
-index b542089..2ea80ed 100644
+index 6d39973..19d6948 100644
 --- a/src/svg/qsvghandler.cpp
 +++ b/src/svg/qsvghandler.cpp
 @@ -1627,6 +1627,7 @@ static void pathArc(QPainterPath &path,
@@ -208,7 +208,7 @@ index b542089..2ea80ed 100644
  }
  
  static bool parseStyle(QSvgNode *node,
-@@ -2997,8 +2988,8 @@ static QSvgNode *createPathNode(QSvgNode *parent,
+@@ -2998,8 +2989,8 @@ static QSvgNode *createPathNode(QSvgNode *parent,
  
      QPainterPath qpath;
      qpath.setFillRule(Qt::WindingFill);
@@ -220,5 +220,5 @@ index b542089..2ea80ed 100644
      QSvgNode *path = new QSvgPath(parent, qpath);
      return path;
 -- 
-2.36.1
+2.37.2
 

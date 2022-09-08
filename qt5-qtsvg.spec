@@ -15,29 +15,26 @@ Name:		qt5-qtsvg
 Group:		Development/KDE and Qt
 License:	LGPLv2 with exceptions or GPLv3 with exceptions and GFDL
 URL:		http://www.qt.io
-Version:	5.15.5
+Version:	5.15.6
 %if "%{beta}" != ""
 Release:	0.%{beta}.1
 %define qttarballdir qtsvg-everywhere-src-%{version}-%{beta}
 Source0:	http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}-%{beta}/submodules/%{qttarballdir}.tar.xz
 %else
-Release:	2
+Release:	1
 %define qttarballdir qtsvg-everywhere-opensource-src-%{version}
 Source0:	http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}/submodules/%{qttarballdir}.tar.xz
 %endif
 Source1:	qt5-qtsvg.rpmlintrc
 # (tpg) from KDE https://invent.kde.org/qt/qt/qtsvg -b kde/5.15
 Patch1000:	0001-Avoid-buffer-overflow-in-isSupportedSvgFeature.patch
-Patch1001:	0002-Limit-font-size-to-avoid-numerous-overflows.patch
-Patch1002:	0003-Support-font-size-not-in-pixels.patch
-Patch1003:	0004-Fix-text-x-y-when-the-length-is-not-in-pixels.patch
-Patch1004:	0005-Fix-parsing-of-arc-elements-in-paths.patch
-Patch1005:	0006-Improve-parsing-of-r.patch
-Patch1006:	0007-Fix-parsing-of-animation-clock-values.patch
-Patch1007:	0008-Do-stricter-error-checking-when-parsing-path-nodes.patch
-Patch1008:	0009-SVG-Image-reading-Reject-oversize-svgs-as-corrupt.patch
-Patch1009:	0010-Unconditionally-stop-parsing-after-the-svg-end-tag.patch
-Patch1010:	0011-Avoid-undefined-behavior-when-painter-transform-goes.patch
+Patch1001:	0002-Support-font-size-not-in-pixels.patch
+Patch1002:	0003-Fix-text-x-y-when-the-length-is-not-in-pixels.patch
+Patch1003:	0004-Improve-parsing-of-r.patch
+Patch1004:	0005-Do-stricter-error-checking-when-parsing-path-nodes.patch
+Patch1005:	0006-SVG-Image-reading-Reject-oversize-svgs-as-corrupt.patch
+Patch1006:	0007-Unconditionally-stop-parsing-after-the-svg-end-tag.patch
+Patch1007:	0008-Avoid-undefined-behavior-when-painter-transform-goes.patch
 # KDE patches contain binary diffs and need to be applied with "git apply"
 %define __scm git
 BuildRequires:	git-core

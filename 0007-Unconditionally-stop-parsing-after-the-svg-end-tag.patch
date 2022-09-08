@@ -1,7 +1,7 @@
-From 68de925ddc20dfb8900be4fa47fa5a5916836cc8 Mon Sep 17 00:00:00 2001
+From a4eb712be651b491f32790f17f28f99c51505b73 Mon Sep 17 00:00:00 2001
 From: Eirik Aavitsland <eirik.aavitsland@qt.io>
 Date: Wed, 5 Jan 2022 09:48:22 +0100
-Subject: [PATCH 10/10] Unconditionally stop parsing after the svg end tag
+Subject: [PATCH 7/8] Unconditionally stop parsing after the svg end tag
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
@@ -24,10 +24,10 @@ Reviewed-by: Robert Löhning <robert.loehning@qt.io>
  1 file changed, 1 insertion(+), 3 deletions(-)
 
 diff --git a/src/svg/qsvghandler.cpp b/src/svg/qsvghandler.cpp
-index 2ea80ed..f2653af 100644
+index 19d6948..b07a8ee 100644
 --- a/src/svg/qsvghandler.cpp
 +++ b/src/svg/qsvghandler.cpp
-@@ -3696,9 +3696,7 @@ void QSvgHandler::parse()
+@@ -3697,9 +3697,7 @@ void QSvgHandler::parse()
          case QXmlStreamReader::EndElement:
              endElement(xml->name());
              ++remainingUnfinishedElements;
@@ -39,5 +39,5 @@ index 2ea80ed..f2653af 100644
          case QXmlStreamReader::Characters:
              characters(xml->text());
 -- 
-2.36.1
+2.37.2
 

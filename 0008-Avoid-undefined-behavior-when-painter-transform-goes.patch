@@ -1,8 +1,7 @@
-From b8e1a7eb5e45880dc97b9b29d2844bc9c07708a7 Mon Sep 17 00:00:00 2001
+From 8cebe1d49617370ea2f5daae68b41c5d45d606c3 Mon Sep 17 00:00:00 2001
 From: Eskil Abrahamsen Blomfeldt <eskil.abrahamsen-blomfeldt@qt.io>
 Date: Wed, 6 Jul 2022 13:52:46 +0200
-Subject: [PATCH 11/11] Avoid undefined behavior when painter transform goes
- oob
+Subject: [PATCH 8/8] Avoid undefined behavior when painter transform goes oob
 
 With some broken input files, we can end up with a matrix
 that scales or translates so far that it ends up with
