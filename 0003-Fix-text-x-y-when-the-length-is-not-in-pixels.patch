@@ -1,7 +1,7 @@
-From e81623e12f5925909a98392749ac3e8cb8c255e9 Mon Sep 17 00:00:00 2001
+From 52fb9ca4d651527f540bb5a674e83718e9d8f65e Mon Sep 17 00:00:00 2001
 From: Albert Astals Cid <albert.astals.cid@kdab.com>
 Date: Mon, 11 Oct 2021 11:11:26 +0200
-Subject: [PATCH 3/8] Fix text x/y when the length is not in pixels
+Subject: [PATCH 3/9] Fix text x/y when the length is not in pixels
 
 Fixes: QTBUG-97421
 Pick-to: 6.2
@@ -27,5 +27,5 @@ index adbf3fa..a1ee3c2 100644
      QSvgNode *text = new QSvgText(parent, QPointF(nx, ny));
      return text;
 -- 
-2.37.2
+2.38.1
 

@@ -1,7 +1,7 @@
-From e785a10d106b4ec26216610b7930e57ba92f2398 Mon Sep 17 00:00:00 2001
+From 94b152db2380092822a7fb81b17cc70966f2d873 Mon Sep 17 00:00:00 2001
 From: Allan Sandfeld Jensen <allan.jensen@qt.io>
 Date: Fri, 5 Mar 2021 12:52:36 +0100
-Subject: [PATCH 4/8] Improve parsing of "r"
+Subject: [PATCH 4/9] Improve parsing of "r"
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
@@ -50,5 +50,5 @@ index a1ee3c2..6d39973 100644
      qreal nfx = ncx;
      if (!fx.isEmpty())
 -- 
-2.37.2
+2.38.1
 
