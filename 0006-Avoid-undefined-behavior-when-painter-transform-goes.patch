@@ -1,7 +1,7 @@
-From 995c21325143a32de75be4652921437a36c4e28d Mon Sep 17 00:00:00 2001
+From 84bace5fcd22fb6d9e3b888fbfab71ff446646f2 Mon Sep 17 00:00:00 2001
 From: Eskil Abrahamsen Blomfeldt <eskil.abrahamsen-blomfeldt@qt.io>
 Date: Wed, 6 Jul 2022 13:52:46 +0200
-Subject: [PATCH 7/8] Avoid undefined behavior when painter transform goes oob
+Subject: [PATCH 6/7] Avoid undefined behavior when painter transform goes oob
 
 With some broken input files, we can end up with a matrix
 that scales or translates so far that it ends up with
@@ -51,5 +51,5 @@ index 63d0797..19e7154 100644
  
  QRectF QSvgTinyDocument::boundsOnElement(const QString &id) const
 -- 
-2.38.1
+2.40.0.rc2
 
