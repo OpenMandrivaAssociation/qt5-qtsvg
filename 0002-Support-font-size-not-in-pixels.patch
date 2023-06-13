@@ -1,7 +1,7 @@
-From 75efe623cddba86c06534c26d21819db80c6231e Mon Sep 17 00:00:00 2001
+From 966c669a523d34bd9a4f092d1905f39b4e2bd643 Mon Sep 17 00:00:00 2001
 From: Albert Astals Cid <albert.astals.cid@kdab.com>
 Date: Mon, 11 Oct 2021 11:13:57 +0200
-Subject: [PATCH 2/7] Support font size not in pixels
+Subject: [PATCH 2/8] Support font size not in pixels
 
 Fixes: QTBUG-97422
 Pick-to: 6.2
@@ -31,5 +31,5 @@ index b2227b6..7858a37 100644
              break;
          default:
 -- 
-2.40.0.rc2
+2.41.0.rc2
 
