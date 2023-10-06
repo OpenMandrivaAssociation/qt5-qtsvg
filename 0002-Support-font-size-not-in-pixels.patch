@@ -1,7 +1,7 @@
-From 966c669a523d34bd9a4f092d1905f39b4e2bd643 Mon Sep 17 00:00:00 2001
+From a66e73724a3a714e8cdece8e6a0c7dd78ed2867c Mon Sep 17 00:00:00 2001
 From: Albert Astals Cid <albert.astals.cid@kdab.com>
 Date: Mon, 11 Oct 2021 11:13:57 +0200
-Subject: [PATCH 2/8] Support font size not in pixels
+Subject: [PATCH 2/6] Support font size not in pixels
 
 Fixes: QTBUG-97422
 Pick-to: 6.2
@@ -13,7 +13,7 @@ Reviewed-by: Eirik Aavitsland <eirik.aavitsland@qt.io>
  1 file changed, 4 insertions(+), 3 deletions(-)
 
 diff --git a/src/svg/qsvghandler.cpp b/src/svg/qsvghandler.cpp
-index b2227b6..7858a37 100644
+index c229c3b..bcc0769 100644
 --- a/src/svg/qsvghandler.cpp
 +++ b/src/svg/qsvghandler.cpp
 @@ -1393,9 +1393,10 @@ static void parseFont(QSvgNode *node,
@@ -31,5 +31,5 @@ index b2227b6..7858a37 100644
              break;
          default:
 -- 
-2.41.0.rc2
+2.42.0
 

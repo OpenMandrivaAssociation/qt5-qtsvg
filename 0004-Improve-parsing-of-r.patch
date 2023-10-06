@@ -1,7 +1,7 @@
-From d82f13dc1d91e0d0f90f5f8f298581ac05045113 Mon Sep 17 00:00:00 2001
+From 9b0d7f3cfc783f3ec1ef5d44c010ed6915010660 Mon Sep 17 00:00:00 2001
 From: Allan Sandfeld Jensen <allan.jensen@qt.io>
 Date: Fri, 5 Mar 2021 12:52:36 +0100
-Subject: [PATCH 4/8] Improve parsing of "r"
+Subject: [PATCH 4/6] Improve parsing of "r"
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
@@ -17,10 +17,10 @@ Reviewed-by: Mårten Nordheim <marten.nordheim@qt.io>
  1 file changed, 6 insertions(+), 3 deletions(-)
 
 diff --git a/src/svg/qsvghandler.cpp b/src/svg/qsvghandler.cpp
-index 3c6e481..b07a8ee 100644
+index 3a0e167..8dda563 100644
 --- a/src/svg/qsvghandler.cpp
 +++ b/src/svg/qsvghandler.cpp
-@@ -2577,6 +2577,8 @@ static QSvgNode *createCircleNode(QSvgNode *parent,
+@@ -2579,6 +2579,8 @@ static QSvgNode *createCircleNode(QSvgNode *parent,
      qreal ncx = toDouble(cx);
      qreal ncy = toDouble(cy);
      qreal nr  = toDouble(r);
@@ -29,7 +29,7 @@ index 3c6e481..b07a8ee 100644
  
      QRectF rect(ncx-nr, ncy-nr, nr*2, nr*2);
      QSvgNode *circle = new QSvgCircle(parent, rect);
-@@ -3047,15 +3049,16 @@ static QSvgStyleProperty *createRadialGradientNode(QSvgNode *node,
+@@ -3049,15 +3051,16 @@ static QSvgStyleProperty *createRadialGradientNode(QSvgNode *node,
  
      qreal ncx = 0.5;
      qreal ncy = 0.5;
@@ -50,5 +50,5 @@ index 3c6e481..b07a8ee 100644
      qreal nfx = ncx;
      if (!fx.isEmpty())
 -- 
-2.41.0.rc2
+2.42.0
 
