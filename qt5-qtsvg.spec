@@ -42,6 +42,7 @@ BuildRequires:	pkgconfig(Qt5Core) = %{version}
 BuildRequires:	pkgconfig(Qt5Gui) = %{version}
 BuildRequires:	pkgconfig(Qt5Widgets) = %{version}
 BuildRequires:	pkgconfig(Qt5Xml) = %{version}
+BuildRequires:	qmake5 = %{version}
 BuildRequires:	pkgconfig(zlib)
 # For the Provides: generator
 BuildRequires:	cmake >= 3.11.0-1
