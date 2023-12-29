@@ -1,4 +1,4 @@
-From 7d53caeff3fd167c94211d9c4b4ba6b09add18e1 Mon Sep 17 00:00:00 2001
+From 7486f484d142ca7af959cd826aadd5a6df98817e Mon Sep 17 00:00:00 2001
 From: Eirik Aavitsland <eirik.aavitsland@qt.io>
 Date: Mon, 25 Oct 2021 14:43:09 +0200
 Subject: [PATCH 5/6] SVG Image reading: Reject oversize svgs as corrupt
@@ -35,5 +35,5 @@ index 561e77e..12e0574 100644
              QPainter p(image);
              d->r.render(&p, bounds);
 -- 
-2.42.0
+2.43.0
 

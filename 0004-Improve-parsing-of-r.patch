@@ -1,4 +1,4 @@
-From 9b0d7f3cfc783f3ec1ef5d44c010ed6915010660 Mon Sep 17 00:00:00 2001
+From 91b2c939908172c61435149be93bf0c754074941 Mon Sep 17 00:00:00 2001
 From: Allan Sandfeld Jensen <allan.jensen@qt.io>
 Date: Fri, 5 Mar 2021 12:52:36 +0100
 Subject: [PATCH 4/6] Improve parsing of "r"
@@ -50,5 +50,5 @@ index 3a0e167..8dda563 100644
      qreal nfx = ncx;
      if (!fx.isEmpty())
 -- 
-2.42.0
+2.43.0
 

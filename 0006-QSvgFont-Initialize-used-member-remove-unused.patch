@@ -1,4 +1,4 @@
-From 7d6e373c7db9c05ef586db0eb50c87cd894229ad Mon Sep 17 00:00:00 2001
+From 5b1b4a99d6bc98c42a11b7a3f6c9f0b0f9e56f34 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Robert=20L=C3=B6hning?= <robert.loehning@qt.io>
 Date: Mon, 24 Apr 2023 15:27:17 +0200
 Subject: [PATCH 6/6] QSvgFont: Initialize used member, remove unused
@@ -55,5 +55,5 @@ index 8dda563..222b6d8 100644
      if (!name.isEmpty())
          font->setFamilyName(name);
 -- 
-2.42.0
+2.43.0
 

@@ -1,4 +1,4 @@
-From a68c03bc7b2e4693c37dc29ea68efb01d00fdf4f Mon Sep 17 00:00:00 2001
+From 27fe4db58dc9374b2f67e7462afe80dc82ec4617 Mon Sep 17 00:00:00 2001
 From: Albert Astals Cid <albert.astals.cid@kdab.com>
 Date: Mon, 11 Oct 2021 11:11:26 +0200
 Subject: [PATCH 3/6] Fix text x/y when the length is not in pixels
@@ -27,5 +27,5 @@ index bcc0769..3a0e167 100644
      QSvgNode *text = new QSvgText(parent, QPointF(nx, ny));
      return text;
 -- 
-2.42.0
+2.43.0
 
