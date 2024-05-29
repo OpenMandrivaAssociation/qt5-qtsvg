@@ -15,7 +15,7 @@ Name:		qt5-qtsvg
 Group:		Development/KDE and Qt
 License:	LGPLv2 with exceptions or GPLv3 with exceptions and GFDL
 URL:		http://www.qt.io
-Version:	5.15.12
+Version:	5.15.14
 %if "%{beta}" != ""
 Release:	0.%{beta}.1
 %define qttarballdir qtsvg-everywhere-src-%{version}-%{beta}

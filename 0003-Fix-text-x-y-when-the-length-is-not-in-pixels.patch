@@ -1,7 +1,7 @@
-From 27fe4db58dc9374b2f67e7462afe80dc82ec4617 Mon Sep 17 00:00:00 2001
+From 5b8305651951a730fb534573be9eb5080746c7f9 Mon Sep 17 00:00:00 2001
 From: Albert Astals Cid <albert.astals.cid@kdab.com>
 Date: Mon, 11 Oct 2021 11:11:26 +0200
-Subject: [PATCH 3/6] Fix text x/y when the length is not in pixels
+Subject: [PATCH 3/5] Fix text x/y when the length is not in pixels
 
 Fixes: QTBUG-97421
 Pick-to: 6.2
@@ -13,7 +13,7 @@ Reviewed-by: Eirik Aavitsland <eirik.aavitsland@qt.io>
  1 file changed, 2 insertions(+)
 
 diff --git a/src/svg/qsvghandler.cpp b/src/svg/qsvghandler.cpp
-index bcc0769..3a0e167 100644
+index f37bf42..836f9a6 100644
 --- a/src/svg/qsvghandler.cpp
 +++ b/src/svg/qsvghandler.cpp
 @@ -3353,7 +3353,9 @@ static QSvgNode *createTextNode(QSvgNode *parent,
@@ -27,5 +27,5 @@ index bcc0769..3a0e167 100644
      QSvgNode *text = new QSvgText(parent, QPointF(nx, ny));
      return text;
 -- 
-2.43.0
+2.45.1
 

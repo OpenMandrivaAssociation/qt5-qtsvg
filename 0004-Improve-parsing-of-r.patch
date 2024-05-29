@@ -1,7 +1,7 @@
-From 91b2c939908172c61435149be93bf0c754074941 Mon Sep 17 00:00:00 2001
+From 960b61de57df3a05e851e0faa91f985bd6125d51 Mon Sep 17 00:00:00 2001
 From: Allan Sandfeld Jensen <allan.jensen@qt.io>
 Date: Fri, 5 Mar 2021 12:52:36 +0100
-Subject: [PATCH 4/6] Improve parsing of "r"
+Subject: [PATCH 4/5] Improve parsing of "r"
 MIME-Version: 1.0
 Content-Type: text/plain; charset=UTF-8
 Content-Transfer-Encoding: 8bit
@@ -17,7 +17,7 @@ Reviewed-by: Mårten Nordheim <marten.nordheim@qt.io>
  1 file changed, 6 insertions(+), 3 deletions(-)
 
 diff --git a/src/svg/qsvghandler.cpp b/src/svg/qsvghandler.cpp
-index 3a0e167..8dda563 100644
+index 836f9a6..222b6d8 100644
 --- a/src/svg/qsvghandler.cpp
 +++ b/src/svg/qsvghandler.cpp
 @@ -2579,6 +2579,8 @@ static QSvgNode *createCircleNode(QSvgNode *parent,
@@ -50,5 +50,5 @@ index 3a0e167..8dda563 100644
      qreal nfx = ncx;
      if (!fx.isEmpty())
 -- 
-2.43.0
+2.45.1
 
