@@ -1,4 +1,4 @@
-From 690128b2b8fb6d6fbdc43b2b2633f0f1de3f0638 Mon Sep 17 00:00:00 2001
+From 26fdcaff0d3d6bf6f5c847e833006577a6e8ba7d Mon Sep 17 00:00:00 2001
 From: Eirik Aavitsland <eirik.aavitsland@qt.io>
 Date: Mon, 25 Oct 2021 14:43:09 +0200
 Subject: [PATCH 5/5] SVG Image reading: Reject oversize svgs as corrupt
@@ -22,7 +22,7 @@ asturmlechner 2022-01-03: resolve conflict with preceding dev branch
  1 file changed, 2 insertions(+)
 
 diff --git a/src/plugins/imageformats/svg/qsvgiohandler.cpp b/src/plugins/imageformats/svg/qsvgiohandler.cpp
-index 561e77e..12e0574 100644
+index 561e77e9..12e05748 100644
 --- a/src/plugins/imageformats/svg/qsvgiohandler.cpp
 +++ b/src/plugins/imageformats/svg/qsvgiohandler.cpp
 @@ -191,6 +191,8 @@ bool QSvgIOHandler::read(QImage *image)
@@ -35,5 +35,5 @@ index 561e77e..12e0574 100644
              QPainter p(image);
              d->r.render(&p, bounds);
 -- 
-2.45.1
+2.46.0
 
