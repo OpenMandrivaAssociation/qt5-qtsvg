@@ -1,4 +1,4 @@
-From 5e9765061e0c72040771e000e101e8385b7e9471 Mon Sep 17 00:00:00 2001
+From 7d90c0dc417f3d724fba64cc3e9416491435c745 Mon Sep 17 00:00:00 2001
 From: Albert Astals Cid <albert.astals.cid@kdab.com>
 Date: Mon, 11 Oct 2021 11:13:57 +0200
 Subject: [PATCH 2/5] Support font size not in pixels
@@ -31,5 +31,5 @@ index dd9b7164..f37bf42e 100644
              break;
          default:
 -- 
-2.46.0
+2.51.2
 
