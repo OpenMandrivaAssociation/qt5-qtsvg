@@ -15,7 +15,7 @@ Name:		qt5-qtsvg
 Group:		Development/KDE and Qt
 License:	LGPLv2 with exceptions or GPLv3 with exceptions and GFDL
 URL:		https://www.qt.io
-Version:	5.15.18
+Version:	5.15.19
 %if "%{beta}" != ""
 Release:	0.%{beta}.1
 %define qttarballdir qtsvg-everywhere-src-%{version}-%{beta}
@@ -23,7 +23,7 @@ Source0:	http://download.qt.io/development_releases/qt/%(echo %{version}|cut -d.
 %else
 Release:	1
 %define qttarballdir qtsvg-everywhere-opensource-src-%{version}
-Source0:	http://download.qt.io/official_releases/qt/%(echo %{version}|cut -d. -f1-2)/%{version}/submodules/%{qttarballdir}.tar.xz
+Source0:	http://download.qt.io/archive/qt/%(echo %{version}|cut -d. -f1-2)/%{version}/submodules/%{qttarballdir}.tar.xz
 %endif
 Source1:	qt5-qtsvg.rpmlintrc
 # (tpg) from KDE https://invent.kde.org/qt/qt/qtsvg -b kde/5.15
@@ -41,6 +41,7 @@ BuildRequires:	pkgconfig(Qt5Widgets) = %{version}
 BuildRequires:	pkgconfig(Qt5Xml) = %{version}
 BuildRequires:	qmake5 = %{version}
 BuildRequires:	pkgconfig(zlib)
+BuildRequires:	make
 # For the Provides: generator
 BuildRequires:	cmake >= 3.11.0-1
 
